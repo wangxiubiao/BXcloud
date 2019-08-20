@@ -1,0 +1,247 @@
+/* 超小设备（手机，小于 768px） ****************************/
+/* Bootstrap 中默认情况下没有媒体查询 */
+    div #divLeft{
+        width: 100%;
+        min-height: 500px;
+        border: 1px green solid;
+        float: left;
+    }
+
+    div #divCenter{
+        width: 100%;
+        min-height: 500px;
+        border: 1px green solid;
+        float: left;
+    }
+
+    div #divRight {
+        width:100%;
+        min-height: 500px;
+        border: 1px green solid;
+        float: left;
+    }
+
+
+/* 小型设备（平板电脑，768px 起） ******************************/
+@media (min-width: 768px ) {
+
+}
+
+/* 中型设备（台式电脑，992px 起） ******************************/
+@media (min-width: 992px) {
+
+}
+
+/* 大型设备（大台式电脑，1200px 起） *****************************/
+@media (min-width: 1200px) {
+
+    #bodyContainer{
+        background: #000033;
+        color: #3497DB;
+    }
+
+
+    /* 页面标题样式 */
+    div .mainTitle{
+        text-align: center;
+    }
+
+    /* 左侧div样式 *******************/
+    div #divLeft{
+        width: 23%;
+        min-height: 500px;
+        border: 1px green solid;
+        border-radius: 10px;
+        float: left;
+        margin-left: 1.5%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    div #divLeft .divSiteInfo{
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .dropdown{
+        width: 100%;
+
+    }
+
+
+    #siteSelect{
+        width: 100%;
+        color: white;
+        background-color: #0F2944;
+        font-size: x-large;
+    }
+
+     /*   应急资源模块    ****************/
+    .divUrgent{
+        width: 100%;
+    }
+    .urgent{
+        width: 90%;
+        margin-left: 5%;
+        text-align: center;
+    }
+    .urgent caption{
+        font-size: 0.2rem;
+    }
+
+    .urgent table{
+        width: 100%;
+    }
+
+    .urgent th{
+        width: 25%;
+        text-align: center;
+    }
+
+
+
+     /* 中间div样式 ********************/
+    div #divCenter{
+        width: 43%;
+        min-height: 500px;
+        border: 1px green solid;
+        border-radius: 10px;
+        float: left;
+        margin-left: 1%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /*  数据监测模块样式  */
+    .divData{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+
+
+    .dataTitle{
+        text-align: center;
+    }
+
+    .divData div{
+        width: 20%;
+        height: 0;
+        border: 1px green solid;
+        border-radius: 100%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 4%;
+        padding-bottom: 20%;
+        float: left;
+        display: block;
+        text-align: center;
+        color: white;
+    }
+
+    .divData span{
+        font-size: 0.3rem;
+        margin-top: 0.1rem;
+        display:block;
+    }
+
+    .paramType,.paramData,.paramUnit{
+        font-size:26px;
+        text-align: center;
+    }
+
+
+    /*  数据分析模块样式 */
+    .divDataAnaliyse{
+        width: 100%;
+        height: auto;
+        margin-bottom: 1%;
+    }
+
+    .dataAnaliyse{
+        width: 100%;
+
+        /*margin-left: 5%;*/
+    }
+
+    .dataAnaliyse select{
+        width: 30%;
+        margin-left: 5%;
+        color: white;
+        background-color: #0F2944;
+        font-size: 0.3rem;
+    }
+
+    .dataAnaliyse #chartContainer{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        /*max-height: 350px;*/
+    }
+
+
+     /* 右侧div样式 ********************/
+    div #divRight {
+        width: 29%;
+        min-height: 500px;
+        border: 1px green solid;
+        border-radius: 10px;
+        float: left;
+        margin-left: 1%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .divMap{
+        width: 100%;
+        padding-bottom: 1%;
+    }
+
+    /*  地图信息模块  ********************/
+    #map_container{
+        width: 98%;
+        margin-left: 1%;
+        min-height: 425px;
+        /*padding-bottom: 78%;*/
+    }
+
+
+
+    /*  报警信息模块  ********************/
+    .waningDiv{
+        width: 90%;
+        margin-left: 5%;
+        background-color: #000033;
+    }
+
+    .waningDiv h2{
+        width: 48%;
+        margin-left: 2%;
+        float: left;
+    }
+
+    .waningDiv ul{
+        txet-align:center;
+    }
+
+    #warningData li{
+        /*list-style: url("/static/probeData/images/warning.png") ; //如何设置图片和文字的间隔？*!*/
+        list-style: none;
+        font-size: 0.2rem;
+        margin-top:0.3rem;
+        color: #3497DB;
+    }
+
+    #warnUL li:before{
+        content:'';
+        width:0.2rem;
+        height:0.2rem;
+        border-radius:50%;
+        background:white;
+        display:inline-block;
+        margin-right:20px;
+        vertical-align:middle;
+        margin-top:0rem;
+    }
+}

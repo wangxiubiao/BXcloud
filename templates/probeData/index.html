@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bootstrap 实例 - 一个简单的网页</title>
+    <link rel="stylesheet" href="../../static/probeData/css/index.css">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {#  服务key  #}
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=de4b3fc48309f321584d2cc364a92ca4"></script>
+    {#  js key  #}
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=a5598430d7d4dd939926de3db68795d7"></script>
+
+{#    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>#}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    {#  自定义script #}
+    <script src="/static/probeData/js/dataPage.js"></script>
+
+</head>
+<body id="bodyContainer" >
+
+ <script type="text/javascript">
+     $(startWebSoc())
+     $(getSites())
+     {#$(siteChange())#}
+
+     function placeholderPic(){
+      var w = document.documentElement.offsetWidth;
+      document.documentElement.style.fontSize=w/20+'px';
+     }
+     placeholderPic();
+     window.onresize=function(){
+      placeholderPic();
+     }
+ </script>
+
+
+<div class="mainTitle">
+  <h2 style="text-align: center">水质在线环境监测云平台</h2>
+</div >
+<div class="mainContainer" style="width: 100%">
+        <div id="divLeft" class="">
+            <div class="divSiteInfo">
+                <h2>站点信息</h2>
+                <div class="dropdown">
+                  <select id="siteSelect" onchange="siteChange()">
+                  </select>
+                </div>
+                <h3 id="weather" style="text-align: center">
+                </h3>
+
+                <p>
+                    <h3 id="siteDesc">
+                    </h3>
+                </p>
+            </div>
+        </div>
+
+        <div id="divCenter" class="">
+            <div class="divData">
+                <h2 class="dataTitle">监测数据</h2>
+                <div class="data1" style="text-align: center" >
+                    <span id="param1">COD</span>
+                    <span id="paramData1">1108.457</span>
+                    <span id="paramUnit1">mg/l</span>
+                </div>
+
+                <div class="data2">
+                    <span id="param2">COD</span>
+                    <span id="paramData2">1108.457</span>
+                    <span id="paramUnit2">mg/l</span>
+                </div>
+
+                <div class="data3">
+                    <span id="param3">COD</span>
+                    <span id="paramData3">1108.457</span>
+                    <span id="paramUnit3">mg/l</span>
+                </div>
+
+                <div class="data4">
+                    <span id="param4">COD</span>
+                    <span id="paramData4">1108.457</span>
+                    <span id="paramUnit4">mg/l</span>
+                </div>
+
+                <div class="data5">
+                    <span id="param5">COD</span>
+                    <span id="paramData5">1108.457</span>
+                    <span id="paramUnit5">mg/l</span>
+                </div>
+
+                <div class="data6">
+                    <span id="param6">COD</span>
+                    <span id="paramData6">1108.457</span>
+                    <span id="paramUnit6">mg/l</span>
+                </div>
+
+                <div class="data7">
+                    <span id="param7">COD</span>
+                    <span id="paramData7">1108.457</span>
+                    <span id="paramUnit7">mg/l</span>
+                </div>
+
+                <div class="data8">
+                    <span id="param8">COD</span>
+                    <span id="paramData8">1108.457</span>
+                    <span id="paramUnit8">mg/l</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="divRight" class="">
+            <div class="divMap" >
+               <h2 class="dataTitle">地图信息</h2>
+                <div id="map_container">
+
+                </div>
+            </div>
+        </div>
+
+        <div id="divLeft" class="">
+            <div class="divUrgent">
+               <h2 class="dataTitle">应急资源</h2>
+                <div class="urgent">
+                    <table cellpadding="5" cellspacing="1" border="1" align="center">
+                        <caption>应急联系人</caption>
+                        <tr style="width: 100%">
+                            <th >姓名</th>
+                            <th >电话</th>
+                            <th >邮箱</th>
+                            <th >站点</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="divCenter" class="">
+            <div class="divDataAnaliyse">
+               <h2 class="dataTitle">统计分析</h2>
+                <div class="dataAnaliyse">
+                    <select id="paramSelect" onchange="get24HourData()">
+                    </select>
+                    <div id="chartContainer" >
+
+                    </div>
+                    <script type="text/javascript">
+                        {#$(get24HourData())#}
+                        {#$(drawChart())#}
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div id="divRight" class="">
+            <div class="divDataAnaliyse">
+               <h2 class="dataTitle">报警管理</h2>
+                <div class="waningDiv">
+                    <h2>报警总数:</h2>
+                    <h2 id="warningNum">0</h2>
+                    <div id="warningData">
+                        <ul id="warnUL">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+</body>
+</html>

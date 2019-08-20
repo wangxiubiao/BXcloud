@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
+<link href="/static/css/login.css" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>登录</title>
+</head>
+<body id="body">
+    <div class="container">
+            <div class="col">
+              <form class="form-login" action="/login/" method="post">
+                  {% csrf_token %}
+                  {% if message %}
+                    <div class="alert alert-warning">{{ message }}</div>
+                  {% endif %}
+
+                  {% if login_form.captcha.errors %}
+                    <div class="alert alert-warning">{{ login_form.captcha.errors }}</div>
+                  {% elif message %}
+                    <div class="alert alert-warning">{{ message }}</div>
+                  {% endif %}
+                  {#  解决csrf跨域请求攻击  #}
+
+                  <h3 class="text-center">欢迎登录</h3>
+                  <div class="form-group">
+                      {{ login_form.username.label_tag }}
+                      {{ login_form.username}}
+                  </div>
+                  <div class="form-group">
+                      {{ login_form.pwd.label_tag }}
+                      {{ login_form.pwd }}
+                  </div>
+
+                  <div class="form-group">
+                    {{ login_form.captcha.label_tag }}
+                    {{ login_form.captcha }}
+                  </div>
+                <div>
+                  <a href="/register/" class="text-success "><ins>新用户注册</ins></a>
+                  <button type="submit" class="btn btn-primary float-right">登录</button>
+                </div>
+              </form>
+            </div>
+    </div>
+</body>
+</html>
